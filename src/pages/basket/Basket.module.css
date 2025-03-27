@@ -1,0 +1,224 @@
+/* Контейнер */
+.container {
+  width: 1480px;
+  margin: 0 auto;
+}
+
+/* Хлебные крошки */
+.breadcrumb_section .breadcrumb {
+  display: inline-block;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  border-radius: 5px;
+  counter-reset: flag;
+  margin-top: 25px;
+}
+
+.breadcrumb_section .breadcrumb a {
+  font-weight: bold;
+  text-decoration: none;
+  outline: none;
+  display: block;
+  float: left;
+  font-size: 12px;
+  line-height: 36px;
+  color: white;
+  padding: 0 10px 0 60px;
+  background: #333;
+  background: linear-gradient(#333, #111);
+  position: relative;
+}
+
+.breadcrumb_section .breadcrumb a:first-child {
+  padding-left: 46px;
+  border-radius: 5px 0 0 5px;
+}
+
+.breadcrumb_section .breadcrumb a:first-child:before {
+  left: 14px;
+}
+
+.breadcrumb_section .breadcrumb a:last-child {
+  padding-right: 20px;
+}
+
+.breadcrumb_section .breadcrumb a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -18px;
+  width: 36px;
+  height: 36px;
+  transform: scale(0.707) rotate(45deg);
+  z-index: 1;
+  background: #555;
+  background: linear-gradient(135deg, #777, #333);
+  box-shadow: 2px -2px 0 2px rgba(0, 0, 0, 0.4), 3px -3px 0 2px rgba(255, 255, 255, 0.1);
+  border-radius: 0 5px 0 50px;
+}
+
+.breadcrumb_section .breadcrumb a:last-child:after {
+  content: none;
+}
+
+.breadcrumb_section .breadcrumb a:before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: counter(flag);
+  counter-increment: flag;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  margin: 8px 0;
+  position: absolute;
+  top: 0;
+  left: 30px;
+  background: #333;
+  background: linear-gradient(#333, #300);
+  font-weight: bold;
+}
+
+/* Секция с корзиной */
+.production {
+  margin-bottom: 110px;
+}
+
+.production h1 {
+  color: transparent;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0%, rgb(255, 255, 255) 51%, rgba(255, 255, 255, 0.4) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 50px;
+  line-height: 1.5;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.production p {
+  max-width: 579px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #aaa;
+}
+
+/* Карточки услуг */
+.services_cards .services_cards__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-bottom: 120px;
+}
+
+.services_cards .services_cards__box .services_cards__box_elem {
+  border-right: 1px solid #303539;
+  padding-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 330px;
+}
+
+.services_cards .services_cards__box .services_cards__box_elem h3 {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.services_cards .services_cards__box .services_cards__box_elem h3 p {
+  font-weight: 600;
+  font-size: 20px;
+  color: #d8d8d8;
+  margin-bottom: 0;
+  min-height: 24px;
+}
+
+.services_cards .services_cards__box .services_cards__box_elem h3 img {
+  margin: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.services_cards .services_cards__box .services_cards__box_elem p {
+  font-weight: 600;
+  font-size: 17px;
+  text-align: center;
+  color: #a1a2a2;
+  margin-bottom: 30px;
+  min-height: 100px;
+}
+
+.services_cards .services_cards__box .services_cards__box_elem a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 78px;
+  width: 230px;
+  height: 50px;
+  box-shadow: 0 18px 20px 5px rgba(125, 118, 218, 0.1);
+  background: #19201d;
+}
+
+.services_cards .services_cards__box .services_cards__box_elem img {
+  margin-bottom: 30px;
+  width: 284px;
+  height: 169px;
+}
+
+/* Медиа-запросы для адаптации */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .services_cards .services_cards__box {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .services_cards .services_cards__box .services_cards__box_elem {
+    border-right: none;
+    padding-right: 0;
+    width: 100%;
+  }
+
+  .production h1 {
+    font-size: 36px;
+  }
+
+  .production p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .breadcrumb_section .breadcrumb a {
+    padding: 0 10px 0 40px;
+  }
+
+  .breadcrumb_section .breadcrumb a:first-child {
+    padding-left: 30px;
+  }
+
+  .services_cards .services_cards__box .services_cards__box_elem h3 p {
+    font-size: 18px;
+  }
+
+  .services_cards .services_cards__box .services_cards__box_elem p {
+    font-size: 15px;
+  }
+
+  .services_cards .services_cards__box .services_cards__box_elem a {
+    width: 100%;
+  }
+}

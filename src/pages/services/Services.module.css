@@ -25,6 +25,45 @@
     opacity: 0;
   }
 }
+/* Стили для контейнера пагинации */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px; /* Расстояние между кнопками */
+}
+
+/* Стили для кнопок пагинации */
+.pagination button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  color: #333;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Стили для активной кнопки */
+.pagination button.active {
+  background-color: #007bff; /* Цвет активной кнопки */
+  color: #fff;
+  border-color: #007bff;
+}
+
+/* Стили при наведении на кнопку */
+.pagination button:hover {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+/* Стили для отключенной кнопки (если нужно) */
+.pagination button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
 img:nth-child(1) {
   animation-delay: 12s;
 }
@@ -1491,6 +1530,48 @@ footer .bottom_footer {
 
 .menu {
   display: none;
+}
+.addCardButton {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.addCardButton:hover {
+  background-color: #0056b3;
+}
+
+.cardForm {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.cardForm input,
+.cardForm select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #000;
+}
+
+.cardForm button {
+  padding: 10px;
+  background-color: #28a745;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cardForm button:hover {
+  background-color: #218838;
 }
 
 @media (max-width: 760px) {

@@ -1,0 +1,326 @@
+/* Контейнер */
+/* Бургер-меню */
+.menu {
+  display: none; /* По умолчанию скрыто */
+}
+
+.burger_checkbox {
+  display: none; /* Скрываем чекбокс */
+}
+
+.burger {
+  display: none; /* Скрываем бургер на десктопе */
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+}
+
+.burger span {
+  width: 100%;
+  height: 3px;
+  background: white;
+  transition: all 0.3s;
+}
+
+.menu_list {
+  display: none; /* Скрываем меню по умолчанию */
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #202020;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.menu_list_open {
+  display: block; /* Показываем меню, если isMenuOpen = true */
+}
+
+.menu_item {
+  display: block;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu_item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Адаптивность для мобильных устройств */
+@media screen and (max-width: 768px) {
+  .header__menu__center nav {
+    display: none; /* Скрываем основное меню на мобильных устройствах */
+  }
+
+  .menu {
+    display: block; /* Показываем бургер-меню */
+  }
+
+  .burger {
+    display: flex; /* Показываем иконку бургера */
+  }
+}
+.container {
+  width: 1480px;
+  margin: 0 auto;
+}
+
+/* Хедер */
+.header {
+  background: #17171A;
+  padding: 25px 0;
+  position: relative; /* Добавлено для позиционирования меню */
+}
+
+.header_menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 90px;
+}
+
+.header__menu__left a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+
+.header__menu__left a p {
+  font-size: 12px;
+  color: white;
+  border-left: 1px solid #303539;
+  padding-left: 10px;
+}
+
+.header__menu__center nav ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+}
+
+.header__menu__center nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.header__menu__center nav ul li a:hover {
+  color: #0A97F9;
+}
+
+.header__menu__right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 135px;
+}
+
+header .header__menu__right .button_container_1 {
+  /* position: relative; */
+  width: 100px;
+  height: 50px;
+  overflow: hidden;
+  border: 1px solid rgb(82, 82, 82);
+  font-weight: 300;
+  font-size: 18px;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  border-radius: 20px;
+}
+
+.child{
+  width: 220px !important;
+}
+
+header .header__menu__right .button_container_1 button {
+  width: 101%;
+  height: 100%;
+  font-weight: 300;
+  font-size: 18px;
+  font-weight: bold;
+  background: #e4e4e4;
+  -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  -webkit-mask-size: 2300% 100%;
+  mask-size: 2300% 100%;
+  border: none;
+  color: #2b2b2b;
+  cursor: pointer;
+  animation: ani2 0.7s steps(22) forwards;
+}
+
+header .header__menu__right .button_container_1 button:hover {
+  animation: ani 0.7s steps(22) forwards;
+}
+
+header .header__menu__right .mas {
+  position: absolute;
+  text-align: center;
+  width: 101%;
+  font-weight: 300;
+  font-size: 18px;
+  margin-top: 13px;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+@keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+/* Бургер-меню */
+.menu {
+  display: none;
+}
+
+.burger-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+
+.burger {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  display: block;
+  width: 40px;
+  height: 26px;
+  background: transparent;
+  border: none;
+}
+
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #fff;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.burger::before {
+  top: 0;
+  box-shadow: 0 11px 0 #fff;
+}
+
+.burger::after {
+  bottom: 0;
+}
+
+.burger-checkbox:checked + .burger::before {
+  top: 11px;
+  transform: rotate(45deg);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
+}
+
+.burger-checkbox:checked + .burger::after {
+  bottom: 11px;
+  transform: rotate(-45deg);
+}
+
+.menu-list {
+  top: 90px;
+  right: 20px; /* Изменено для лучшего позиционирования */
+  z-index: 5;
+  position: absolute;
+  display: grid;
+  gap: 12px;
+  padding: 42px 0;
+  margin: 0;
+  background: rgb(68, 67, 66);
+  list-style-type: none;
+  transform: translateX(100%); /* Меню скрыто за пределами экрана */
+  transition: transform 0.3s ease-in-out;
+  width: 200px;
+  border-radius: 20px;
+}
+
+.menu-item {
+  display: block;
+  padding: 8px;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.burger-checkbox:checked ~ .menu-list {
+  transform: translateX(0); /* Меню появляется */
+}
+
+
+
+/* Медиа-запросы для адаптации */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .header__menu__center nav {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+  }
+ 
+  .header__menu__right {
+    display: none;
+  }
+
+  .burger-checkbox:checked ~ .menu_list {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header__menu__left a p {
+    display: none;
+  }
+
+  .menu_list {
+    right: 10px;
+    width: 180px;
+  }
+}
